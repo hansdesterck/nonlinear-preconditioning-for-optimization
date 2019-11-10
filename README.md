@@ -1,13 +1,13 @@
 # Nonlinear Preconditioning Project: Convergence Acceleration for Nonlinear Optimization
 
 ## Project goals:
-* This project develops a collection of methods that can accelerate the convergence of simple fixed-point optimization methods (for example, Alternating Least Squares (ALS) for canonical tensor decomposition), *by using the fixed-point method as a* **Nonlinear Preconditioner** (**inner iteration**) *for well-known optimization methods (used as the **outer iteration**)* that include:
+* This project develops a collection of methods to accelerate the convergence of simple fixed-point optimization methods (for example, Alternating Least Squares (ALS) for canonical tensor decomposition), *by using the fixed-point method as a* **Nonlinear Preconditioner** (**inner iteration**) *to improve the convergence of well-known optimization methods (that are used as the **outer iteration**).* The outer iteration methods that are used to accelerate the simple fixed-point optimization method include:
     * LBFGS
     * Nesterov's method
     * nonlinear Conjugate Gradients (NCG)
     * nonlinear GMRES (NGMRES)
     * Anderson acceleration (which is almost identical to NGMRES)
-* In this approach, *the outer iteration method (LBFGS, Nesterov, NCG, NGMRES, Anderson) can be viewed as an accelerator for the inner iteration (e.g., ALS)*, or, equivalently, *the inner iteration (ALS) can be viewed as a Nonlinear Preconditioner for the outer iteration*
+* In this approach, *the outer iteration method (LBFGS, Nesterov, NCG, NGMRES, Anderson) can be viewed as an accelerator for the inner iteration (e.g., ALS)*, or, equivalently, *the inner iteration (ALS) can be viewed as a Nonlinear Preconditioner for the outer iteration.*
 
 ## Project contents/folders:
 * **folder poblano_toolbox_ext:** contains **new implementations of the LBFGS, Nesterov, NCG and NGMRES/Anderson methods, that enable Nonlinear Preconditioning of these methods (e.g., using ALS as the inner iteration Nonlinear Preconditioner)**; in essence, these extensions replace the gradient directions that are normally used by the outer iteration methods, by preconditioner step directions, see references below; the new implementations are based on optimization methods implemented in the Poblano Toolbox for MATLAB (included in this repository), see next bullet point; *the implementations in folder poblano_toolbox_ext can be used as an extension of the Poblano Toolbox for MATLAB*
